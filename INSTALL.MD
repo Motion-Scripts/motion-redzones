@@ -2,7 +2,7 @@
 1. Install PolyZone if it isn't already installed https://github.com/mkafrin/PolyZone/releases/latest
 2. Download latest release.
 3. Add script to your Fivem resources folder.
-4. Add `ensure jmhr-redzones` to `server.cfg`
+4. Add `ensure motion-redzones` to `server.cfg`
 5. Start to config the script
 - Add any zones you need in shared/config.lua
 - Setup webhooks in shared/server_config.lua
@@ -16,4 +16,5 @@
 # Dependencies
 ox_lib
 PolyZone
+
 (any supported ambulance & inventory script or add a custom one)
