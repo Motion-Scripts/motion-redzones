@@ -20,17 +20,17 @@ AddEventHandler("gameEventTriggered", function (event, args)
 
         if currentZone and currentZone.exitPoints then
             if currentZone.doReward then
-                TriggerServerEvent("jmhr-redzones:RewardPlayer", attackerServerId, currentZone.key)
+                TriggerServerEvent("motion-redzones:RewardPlayer", attackerServerId, currentZone.key)
             end
             if currentZone.doRevive then
                 Wait(2000)
-                TriggerServerEvent("jmhr-redzones:HelpPlayer", currentZone.key)
+                TriggerServerEvent("motion-redzones:HelpPlayer", currentZone.key)
             end
         end
     end
 end)
 
-RegisterNetEvent("jmhr-redzones:TeleportOut", function()
+RegisterNetEvent("motion-redzones:TeleportOut", function()
     local exitPoint = currentZone.exitPoints[math.random(1, #currentZone.exitPoints)]
 
     if exitPoint and type(exitPoint.x) == "number" and type(exitPoint.y) == "number" and type(exitPoint.z) == "number" then
@@ -49,19 +49,19 @@ for zoneKey, zoneData in pairs(Config.Zones) do
             currentZone.key = zoneKey
 
             if Config.kdUIEnabled then
-                TriggerEvent("jmhr-redzones:showUI", PlayerId())
+                TriggerEvent("motion-redzones:showUI", PlayerId())
             end
         else
             currentZone = nil 
 
             if Config.kdUIEnabled then
-                TriggerEvent("jmhr-redzones:hideUI", PlayerId())
+                TriggerEvent("motion-redzones:hideUI", PlayerId())
             end
         end
 
         local netId = NetworkGetNetworkIdFromEntity(GetVehiclePedIsIn(PlayerPedId(), false))
         
-        TriggerServerEvent("jmhr-redzones:UpdateStatus", PlayerId(), netId)
+        TriggerServerEvent("motion-redzones:UpdateStatus", PlayerId(), netId)
     end)
 
     table.insert(zones, zone)
@@ -84,7 +84,7 @@ for x, v  in pairs(Config.Zones) do
     end
 end
 
-TriggerServerEvent("jmhr-redzones:RequestStats")
+TriggerServerEvent("motion-redzones:RequestStats")
 
 while true do
     Wait(2000)

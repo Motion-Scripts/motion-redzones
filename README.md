@@ -1,4 +1,4 @@
-# JMHR Redzones
+# motion Redzones
 
 *(If you're looking for install guide check INSTALL.MD)*
 
@@ -47,7 +47,7 @@ If you need support join the Discord below, support is a privilige not a right s
 
 https://discord.gg/D2YwMYYtYh
 
-❤ https://ko-fi.com/jmhruk ❤
+❤ https://ko-fi.com/motionuk ❤
 ```
        _ __  __ _    _ _____        _    _ _  __
       | |  \/  | |  | |  __ \      | |  | | |/ /

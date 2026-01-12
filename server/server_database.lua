@@ -15,7 +15,7 @@ function addKill(id)
         discordId
     })
 
-    if Config.kdUIEnabled then TriggerClientEvent("jmhr-redzones:UpdateUI", id, getPlayerStats(id)) end
+    if Config.kdUIEnabled then TriggerClientEvent("motion-redzones:UpdateUI", id, getPlayerStats(id)) end
 end
 
 function addDeath(id)
@@ -26,7 +26,7 @@ function addDeath(id)
         discordId
     })
 
-    if Config.kdUIEnabled then TriggerClientEvent("jmhr-redzones:UpdateUI", id, getPlayerStats(id)) end
+    if Config.kdUIEnabled then TriggerClientEvent("motion-redzones:UpdateUI", id, getPlayerStats(id)) end
 end
 
 function getPlayerStats(id)
@@ -60,7 +60,7 @@ function getLeaderboard()
 end
 
 function sendLeaderboard()
-    print("[JMHR-Redzones] Sending Leaderboard")
+    print("[motion-Redzones] Sending Leaderboard")
     local topKills, topKD = getLeaderboard()
 
     local killsText = ""
@@ -99,7 +99,7 @@ function sendLeaderboard()
                 }
             },
             footer = {
-                text = "Leaderboard Auto-Update | jmhr.uk | "
+                text = "Leaderboard Auto-Update | motion.uk | "
             },
             timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
         }}
@@ -122,8 +122,8 @@ else
         );
     ]])
 
-    RegisterNetEvent("jmhr-redzones:RequestStats", function()
-        TriggerClientEvent("jmhr-redzones:UpdateUI", source, getPlayerStats(source))
+    RegisterNetEvent("motion-redzones:RequestStats", function()
+        TriggerClientEvent("motion-redzones:UpdateUI", source, getPlayerStats(source))
     end)
 
     RegisterCommand("resetredzonestats", function(source)
