@@ -32,6 +32,7 @@ client_scripts {
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'shared/server_config.lua',
+    '_versioncheck.lua',
     'bridge/*.lua',
     'server/*.lua',
 }
@@ -43,4 +44,5 @@ files {
     'web/style.css',
     'web/script.js',
 }
+
 
