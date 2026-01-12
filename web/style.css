@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+.container {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 8px;
+    flex-direction: column;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(10, 12, 16, 0.98), rgba(15, 18, 24, 0.96));
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgba(200, 255, 100, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 0 rgba(200, 255, 100, 0.05);
+    position: relative;
+    overflow: hidden;
+    min-width: 240px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+}
+
+.stat-card.kills {
+    --accent: #c8ff64;
+}
+
+.stat-card.deaths {
+    --accent: #ff6464;
+}
+
+.stat-card.kd {
+    --accent: #64c8ff;
+}
+
+.stat-card:hover {
+    border-color: rgba(200, 255, 100, 0.15);
+    transform: translateX(-4px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7), 
+                inset 0 1px 0 rgba(200, 255, 100, 0.1),
+                0 0 20px rgba(var(--accent-rgb), 0.15);
+}
+
+.stat-card.kills:hover {
+    --accent-rgb: 200, 255, 100;
+}
+
+.stat-card.deaths:hover {
+    --accent-rgb: 255, 100, 100;
+}
+
+.stat-card.kd:hover {
+    --accent-rgb: 100, 200, 255;
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-icon {
+    font-size: 22px;
+    filter: drop-shadow(0 2px 8px currentColor);
+}
+
+.stat-card.kills .stat-icon {
+    color: #c8ff64;
+}
+
+.stat-card.deaths .stat-icon {
+    color: #ff6464;
+}
+
+.stat-card.kd .stat-icon {
+    color: #64c8ff;
+}
+
+.stat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.stat-glow {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 70%);
+    opacity: 0.08;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+@keyframes slideInStagger {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.container.show {
+    display: flex;
+}
+
+.container.show .stat-card:nth-child(1) {
+    animation: slideInStagger 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.container.show .stat-card:nth-child(2) {
+    animation: slideInStagger 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.container.show .stat-card:nth-child(3) {
+    animation: slideInStagger 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
