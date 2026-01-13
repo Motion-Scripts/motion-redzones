@@ -16,7 +16,7 @@ game 'gta5'
 
 author 'Motion Scripts'
 description 'Made by Motion Scripts (Original By @jmhruk)'
-version '1.0.0'
+version '1.0.1'
 
 depedency 'motion_bridge'
 
@@ -45,6 +45,7 @@ files {
     'web/style.css',
     'web/script.js',
 }
+
 
 
 
