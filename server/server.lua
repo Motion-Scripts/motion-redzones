@@ -11,9 +11,6 @@ CreateThread(function()
     end
 end)
 
-
-
-
 local inZone = {}
 
 function sendToDiscord(webhook, title, message)
@@ -80,6 +77,7 @@ RegisterNetEvent("motion-redzones:HelpPlayer", function(zoneKey)
     sendToDiscord(server_config.reviveWebhook, "Redzone Player Revived:", "**Player Being Revived:** ID" .. src .. " (" .. GetPlayerName(src) .. ")")
 
 end) 
+
 
 
 
