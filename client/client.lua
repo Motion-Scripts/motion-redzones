@@ -1,3 +1,12 @@
+if GetCurrentResourceName() ~= 'motion_bridge' then
+    CreateThread(function()
+        Error("Please ensure that the resource name is motion_bridge, changing the resource name will break the script!")
+        Wait(1000 * 30)
+    end)
+else
+    Success("Initialized ^1" .. GetCurrentResourceName() .." ^7by ^1Motion Scripts")
+end
+
 local inZone, currentZone = false, nil
 local zones = {}
 AddEventHandler("gameEventTriggered", function (event, args)
@@ -100,4 +109,5 @@ while true do
             end
         end
     end
+
 end
