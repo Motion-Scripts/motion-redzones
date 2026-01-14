@@ -26,7 +26,7 @@ qb-ambulancejob, qbx_medical, esx_ambulancejob, ars_ambulancejob, wasabi_ambulan
 
 Well, you can add it in. All of the code is open source so just do the following.
 1. Set server_config.customInventory to true or server_config.customAmbulance to true (which ever you need)
-2. Open bridge/custom_framework.lua
+2. Open motion_bridge/custom_framework.lua
 3. Add the code needed to make it work
 
 **-- Server Sided Variables --**
@@ -45,17 +45,19 @@ To reset the stats database please run `resetredzonestats` in server console.
 
 If you need support join the Discord below, support is a privilige not a right so do not expect quick responses. If there are any issues please try to fix yourself first :)
 
-https://discord.gg/D2YwMYYtYh
+https://discord.gg/jAbJ8rVUqw
 
 ❤ https://ko-fi.com/motionuk ❤
 ```
-       _ __  __ _    _ _____        _    _ _  __
-      | |  \/  | |  | |  __ \      | |  | | |/ /
-      | | \  / | |__| | |__) |     | |  | | ' / 
-  _   | | |\/| |  __  |  _  /      | |  | |  <  
- | |__| | |  | | |  | | | \ \   _  | |__| | . \ 
-  \____/|_|  |_|_|  |_|_|  \_\ (_)  \____/|_|\_\
+
+███╗░░░███╗░█████╗░████████╗██╗░█████╗░███╗░░██╗  ░██████╗░█████╗░██████╗░██╗██████╗░████████╗░██████╗
+████╗░████║██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║  ██╔════╝██╔══██╗██╔══██╗██║██╔══██╗╚══██╔══╝██╔════╝
+██╔████╔██║██║░░██║░░░██║░░░██║██║░░██║██╔██╗██║  ╚█████╗░██║░░╚═╝██████╔╝██║██████╔╝░░░██║░░░╚█████╗░
+██║╚██╔╝██║██║░░██║░░░██║░░░██║██║░░██║██║╚████║  ░╚═══██╗██║░░██╗██╔══██╗██║██╔═══╝░░░░██║░░░░╚═══██╗
+██║░╚═╝░██║╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║  ██████╔╝╚█████╔╝██║░░██║██║██║░░░░░░░░██║░░░██████╔╝
+╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝  ╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░╚═════╝░
 ```
+
 
 
 
