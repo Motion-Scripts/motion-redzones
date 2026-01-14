@@ -1,12 +1,14 @@
-if GetCurrentResourceName() ~= 'motion_redzones' then
-    CreateThread(function()
-        print("^1ERROR:^7 Please ensure that the resource name is motion_redzones, changing the resource name will break the script!")
-        Wait(1000) -- small delay so the message prints
-        StopResource(GetCurrentResourceName())
-    end)
-else
-    print("^2Initialized ^1" .. GetCurrentResourceName() .. " ^7by ^1Motion Scripts")
-end
+AddEventHandler('onResourceStart', function(resource)
+    if resource ~= GetCurrentResourceName() then return end
+
+    if resource ~= 'motion_redzones' then
+        print("^1ERROR:^7 Resource name must be ^1motion_redzones^7!")
+        StopResource(resource)
+    else
+        print("^2Initialized ^1" .. resource .. " ^7by ^1Motion Scripts")
+    end
+end)
+
 
 
 local inZone = {}
@@ -75,4 +77,5 @@ RegisterNetEvent("motion-redzones:HelpPlayer", function(zoneKey)
     sendToDiscord(server_config.reviveWebhook, "Redzone Player Revived:", "**Player Being Revived:** ID" .. src .. " (" .. GetPlayerName(src) .. ")")
 
 end) 
+
 
